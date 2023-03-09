@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-md-6">
+      <h2>Table</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in table %}
+            <tr>
+              {% for value in row %}
+                <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Scatterplot</h2>
+      {{ scatterplot|safe }}
+    </div>
+</div>
+
+{% endblock %}
